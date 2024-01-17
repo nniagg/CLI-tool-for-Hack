@@ -1,18 +1,19 @@
 # CLI-tool-for-Hack
-თქვენი დავალებაა ააწყოთ CLI tool-ი რომელიც გააკეთებს Hack ჰარდვეარ პლათფომაზე პროგრამების შესრულების სიმულაციას.
+Your task is to build a CLI tool that will simulate the execution of programs on the Hack hardware platform.
 
-## მოთხოვნები
+## requirements
 ---
-CLI უნდა:
-  1. იღებდეს `.hack` ან `.asm` ფაილს.
-  2. შეასრულოს მიწოდებულ ფაილში არსებული პროგრამა.
-  3. დააგენერიროს `.json` ფაილი რომელშიც იქნება RAM-ის საბოლოო მდგომარეობა.
-    - ფაილის სახელი უნდა დაემთხვას მიწოდებული პროგრამის სახელს.
-  4. მიიღოს პროცესორის ციკლების რაოდენობა არგუმენტად.
+The CLI should:
+   1. Get a `.hack` or `.asm` file.
+   2. Run the program in the supplied file.
+   3. Generate a `.json' file that will contain the final state of the RAM.
+     - The file name must match the name of the supplied program.
+   4. Take the number of processor cycles as an argument.
 
-## ინტერფეისი
+      
+## interface
 ---
-დავალების შესასრულებლად გამოიყენეთ python 3.11. პროგრამის გაშვების მაგალითები:
+Use python 3.11 to complete the task. Examples of running the program:
 
 ```sh
 python -m n2t execute path/to/the/program.hack --cycles 10000
@@ -22,9 +23,9 @@ python -m n2t execute path/to/the/program.hack --cycles 10000
 python -m n2t execute path/to/the/program.asm --cycles 10000
 ```
 
-## გამომავალი მონაცემები
+## Output data
 ---
-პროგრამის შესრულების შემდეგ უნდა დააგენერიროთ `.json` ფაილი რომელშიც იქნება RAM-ის საბოლოო მდგომარეობა JSON ფორმატში.
+After executing the program, you should generate a `.json` file, which will contain the final state of the RAM in JSON format.
 
 ```json
 {
@@ -41,12 +42,12 @@ python -m n2t execute path/to/the/program.asm --cycles 10000
 }
 ```
 
-გაითვალისწინეთ, რომ ფაილში გვხვდება მხოლოდ იმ რეგისტრების მნიშვნელობები, რომლებთანაც პროგრამას ჰქონდა ინტერაქცია.
+Note that the file only contains the values of the registers that the program has interacted with.
 
-## შენიშვნები
+## Remarks
 ---
-- შემომავალი ფაილის მისამართი შეიძლება იყოს სრული (absolute) ან ფარდობითი (relative).
-- CLI უნდა იყოს აგნოსტიკური ოპერაციული სისტემის მიმართ. (უნდა ეშვებოდეს Windows, Unix...)
-- გამომავალ ფაილს უნდა ჰქონდეს იგივე სახელი რაც შემავალ ფაილს (მხოლოდ განსხვავებული გაფართოება).
-- შეგიძლიათ ჩათვალოთ რომ შემავალი ფაილი შეიცავს ვალიდურ პროგრამას.
-- ეკრანის და კლავიატურის სიმულაცია არ მოგეთხოვებათ.
+- The incoming file address can be absolute or relative.
+- CLI should be operating system agnostic. (Must be compatible with Windows, Unix...)
+- The output file must have the same name as the input file (just a different extension).
+- You can assume that the input file contains a valid program.
+- Screen and keyboard simulation will not be required.
