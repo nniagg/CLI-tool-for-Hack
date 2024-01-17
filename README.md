@@ -1,7 +1,7 @@
 # CLI-tool-for-Hack
 Your task is to build a CLI tool that will simulate the execution of programs on the Hack hardware platform.
 
-## requirements
+## Requirements
 ---
 The CLI should:
    1. Get a `.hack` or `.asm` file.
@@ -11,7 +11,7 @@ The CLI should:
    4. Take the number of processor cycles as an argument.
 
       
-## interface
+## Interface
 ---
 Use python 3.11 to complete the task. Examples of running the program:
 
